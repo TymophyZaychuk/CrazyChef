@@ -1,0 +1,30 @@
+import pygame
+import time #імпортуємо потрібні модулі
+
+pygame.init() #ініціалізуємо всі модулі Pygame
+
+
+clock = pygame.time.Clock()  # Створюємо об'єкт годинника
+
+back = (200,255,255)
+mw = pygame.display.set_mode((1200,1050))
+mw.fill(back)  # Заповнюємо вікно фоновим кольором
+pygame.display.set_caption('Crazy Shef')#встановлюється назва програми
+fon = pygame.image.load('fon1.png') #завантажуємо картинку
+fon = pygame.transform.scale(fon,(1150,900))
+#pygame.display.set_icon() # встановлюємо лого
+
+
+
+game = True
+while game:     
+
+    mw.blit(fon,(0,0))
+                
+
+    pygame.display.update()
+
+    for event in pygame.event.get(): #закриття програми
+        if event.type == pygame.QUIT:
+            game = False
+            pygame.quit()
